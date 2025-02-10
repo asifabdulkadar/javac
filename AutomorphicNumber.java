@@ -1,27 +1,26 @@
-import java.util.Scanner;
+public class automorphic {
+    public static void main(String[] args){
 
-public class AutomorphicNumber {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        int n = sc.nextInt(), square = n * n;
+        int a =6;
+        if(a<0){
+            a=-a;
 
-        int temp = n;
-        boolean isAutomorphic = true;
-        while (temp > 0) {
-            if (temp % 10 != square % 10) {
-                isAutomorphic = false;
-                break;
-            }
-            temp /= 10;
-            square /= 10;
         }
+        int squareNum= a*a;
+        int temp =a;
+        int count = 0;
+        while(temp>0){
+            count++;
+            temp=temp/10;
 
-        if (isAutomorphic) {
-            System.out.println(n + " is an Automorphic number.");
-        } else {
-            System.out.println(n + " is not an Automorphic number.");
         }
-        sc.close();
+        int lastDigit = squareNum%(int)Math.pow(10,count);
+        if(lastDigit==a){
+            System.out.println("Automorphic Number");
+
+        }
+        else{
+            System.out.println("Not Automorphic Number");
+        }
     }
 }
