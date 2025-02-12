@@ -23,6 +23,5 @@ public class SimplePrimeCheck {
         } else {
             System.out.println(n + " is not a Prime number.");
         }
-        sc.close();
     }
 }
